@@ -1,81 +1,86 @@
-<h1 class="col-md-12">Générateur de mention légales</h1>
-<div class="col-md-6">
-  <form action="#" method="post">
-    <h2>Le site</h2>
-    <div class="form-group">
-      <input class="form-control" ng-model="site.name" placeholder="Nom du site">
-      <input class="form-control" ng-model="site.url" placeholder="Url du site">
-    </div>
-    
-    <h2>L'hébergeur</h2>
-    <div class="form-group">
-      <input class="form-control" ng-model="hebergeur.adresse" placeholder="Adresse de l'hébergeur">
-      <input type="url" class="form-control" ng-model="hebergeur.url" placeholder="Url de l'hébergeur">
-    </div>
-
-    <h2>Le developpeur </h2>
-    <div class="form-group">
-      <input class="form-control" ng-model="entreprise.name" placeholder="Nom de la société">
-      <input type="url" class="form-control" ng-model="entreprise.url" placeholder="Url de la société">
-      <input class="form-control" ng-model="entreprise.serp" placeholder="Serp de la société">
-    </div>
-
-    <h2>Le client</h2>
-    <div class="form-group">
-      <input class="form-control" ng-model="client.name" placeholder="Nom du client">
-      <input class="form-control" ng-model="client.adresse" placeholder="Adresse du client">
-      <input class="form-control" ng-model="client.email" placeholder="Email du client">
-      <input type="tel" class="form-control" ng-model="client.phone" placeholder="Téléphone du client">
-      <input type="number" class="form-control" ng-model="client.siret" placeholder="N° de siret du client">
-      <input type="number" class="form-control" ng-model="client.capital" placeholder="Capital de la société en Euros">
-    </div>
-  </form>
-  
-
+<div class="container">
+  <div class="row">
+      <h1 class="col-md-12">Générateur de mention légales</h1>
+  </div>
+  <div class="row">
+      <div class="col-md-6">
+          <form action="#" method="post">
+            <section>
+              <h2>Le site</h2>
+              <div class="form-group">
+                  <input class="form-control" ng-model="site.name" placeholder="Nom du site">
+                  <input class="form-control" ng-model="site.url" placeholder="Url du site">
+              </div>
+            </section>
+            <section>
+               <h2>L'hébergeur</h2>
+              <div class="form-group">
+                  <input class="form-control" ng-model="hebergeur.adresse" placeholder="Adresse de l'hébergeur">
+                  <input type="url" class="form-control" ng-model="hebergeur.url" placeholder="Url de l'hébergeur">
+              </div>
+            </section>
+            <section>
+              <h2>Le developpeur </h2>
+              <div class="form-group">
+                  <input class="form-control" ng-model="entreprise.name" placeholder="Nom de la société">
+                  <input type="url" class="form-control" ng-model="entreprise.url" placeholder="Url de la société">
+                  <input class="form-control" ng-model="entreprise.serp" placeholder="Serp de la société">
+              </div>
+            </section>
+            <section>
+              <h2>Le client</h2>
+              <div class="form-group">
+                  <input class="form-control" ng-model="client.name" placeholder="Nom du client">
+                  <input class="form-control" ng-model="client.adresse" placeholder="Adresse du client">
+                  <input class="form-control" ng-model="client.email" placeholder="Email du client">
+                  <input type="tel" class="form-control" ng-model="client.phone" placeholder="Téléphone du client">
+                  <input type="number" class="form-control" ng-model="client.siret" placeholder="N° de siret du client">
+                  <input type="number" class="form-control" ng-model="client.capital" placeholder="Capital de la société en Euros">
+              </div>
+            </section>
+          </form>
+      </div>
+      <div class="col-md-6">
+        <section>
+          <h2>Vos Mentions légales </h2>
+          <h3>Au format texte</h3>
+          <p>Conformément aux dispositions de l’article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l’économie numérique, nous vous informons que :</p>
+          <p> Le site internet <a title="{{site.name}}" href="{{site.url}}">{{site.name}}</a> est édité par :
+              <br> {{client.name}} <span ng-if="client.capital">au capital de {{client.capital}}€ euros.</span>
+              <br> Numéro SIRET : {{client.siret}}
+              <br> Siège social : {{client.adresse}}
+              <br> Téléphone : {{client.phone}}
+              <br> Email : {{client.email}}
+          </p>
+          <p>Le directeur de la publication du site web <a title="{{site.name}}" href="{{site.url}}">{{site.name}}</a> est {{client.name}}.</p>
+          <p>Le site <a title="{{site.name}}" href="{{site.url}}">{{site.name}}</a> est hébergé par {{hebergeur.adresse}}, <a title="{{hebergeur.url}}" href="{{hebergeur.url}}" target="_blank" rel="nofollow">{{hebergeur.url}}</a>.</p>
+          <p><a title="{{entreprise.serp}}" href="{{entreprise.url}}" target="_blank">Développement du site par {{entreprise.name}}</a></p>
+          <h3>Au format HTML</h3>
+          <div hljs include="'compile-me'" compile="true"></div>
+          <script type="text/ng-template" id="compile-me">
+<p>Conformément aux dispositions de l’article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l’économie numérique, nous vous informons que :
+</p>
+<p>
+    Le site internet <a title="{{site.name}}" href="{{site.url}}">{{site.name}}</a> est édité par :
+    <br> {{client.name}} au capital de {{client.capital}}€ euros.
+    <br> Numéro SIRET : {{client.siret}}
+    <br> Siège social : {{client.adresse}}
+    <br> Téléphone : {{client.phone}}
+    <br> Email : {{client.email}}
+<p>
+<p>Le directeur de la publication du site web <a title="{{site.name}}" href="{{site.url}}">{{site.name}}</a> est {{client.name}}.</p>
+<p>Le site <a title="{{site.name}}" href="{{site.url}}">{{site.name}}</a> est hébergé par {{hebergeur.adresse}}, <a title="{{hebergeur.url}}" href="{{hebergeur.url}}" target="_blank" rel="nofollow">{{hebergeur.url}}</a>.</p>
+<p><a title="{{entreprise.serp}}" href="{{entreprise.url}}" target="_blank">Développement du site par {{entreprise.name}}</a></p>
+          </script>
+        </section>  
+      </div>
+  </div>
 </div>
 
-<div class="col-md-6">
-  <h2>Vos Mentions légales </h2>
-  <h3>au format texte</h3>
-  <p>Conformément aux dispositions de l’article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l’économie numérique, nous vous informons que :</p>
-  <p> Le site internet <a title="{{site.name}}" href="{{site.url}}">{{site.name}}</a> est édité par :<br>
-  {{client.name}} <span ng-if="client.capital">au capital de {{client.capital}}€ euros.</span><br>
-  Numéro SIRET : {{client.siret}}<br>
-  Siège social : {{client.adresse}}<br>
-  Téléphone : {{client.phone}}<br>
-  Email : {{client.email}}
-  </p>
- 
-  <p>Le directeur de la publication du site web <a title="{{site.name}}" href="{{site.url}}">{{site.name}}</a> est {{client.name}}.</p>
-  <p>Le site <a title="{{site.name}}" href="{{site.url}}">{{site.name}}</a> est hébergé par {{hebergeur.adresse}}, <a title="{{hebergeur.url}}" href="{{hebergeur.url}}" target="_blank" rel="nofollow">{{hebergeur.url}}</a>.</p>
-  <p><a title="{{entreprise.serp}}" href="{{entreprise.url}}" target="_blank">Développement du site par {{entreprise.name}}</a></p>
-  <h3>au format HTML</h3>
-    <div hljs source include="'compile-me'" compile="true" language="html"></div>
-
-    <script type="text/ng-template" id="compile-me">
-    <p>Conformément aux dispositions de l’article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l’économie numérique, nous vous informons que :
-    </p>
-    <p>
-      Le site internet <a title="{{site.name}}" href="{{site.url}}">{{site.name}}</a> est édité par :<br>
-      {{client.name}} au capital de {{client.capital}}€ euros.<br>
-      Numéro SIRET : {{client.siret}}<br>
-      Siège social : {{client.adresse}}<br>
-      Téléphone : {{client.phone}}<br>
-      Email : {{client.email}}
-    <p>
-    <p>Le directeur de la publication du site web <a title="{{site.name}}" href="{{site.url}}">{{site.name}}</a> est {{client.name}}.</p>
-    <p>Le site <a title="{{site.name}}" href="{{site.url}}">{{site.name}}</a> est hébergé par {{hebergeur.adresse}}, <a title="{{hebergeur.url}}" href="{{hebergeur.url}}" target="_blank" rel="nofollow">{{hebergeur.url}}</a>.</p>
-    <p><a title="{{entreprise.serp}}" href="{{entreprise.url}}" target="_blank">Développement du site par {{entreprise.name}}</a></p>
-    </script>
-      
-  <div >
-
- 
-
-  
-
-
-</div>
- 
-
-
+<footer class="footer">
+  <div class="container">
+    <div class="col-md-12">
+        <p> Codé par <a href="http://yoanmarchal.com">Yoan Marchal avec AngularJS </a></p>
+    </div>
+  </div>
+</footer>

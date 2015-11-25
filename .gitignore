@@ -49,3 +49,4 @@ components/
 .tmp
 temp
 dist
+.sass-cache
