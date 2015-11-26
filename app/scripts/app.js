@@ -10,8 +10,6 @@
  */
 angular
   .module('mlgApp', [
-    'ngCookies',
-    'ngMessages',
     'ngRoute',
     'ngSanitize',
     'hljs'
