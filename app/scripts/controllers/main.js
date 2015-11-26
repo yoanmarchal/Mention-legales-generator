@@ -18,9 +18,7 @@ angular.module('mlgApp')
     $scope.entreprise.url = 'http://yoanmarchal.com/';
     $scope.entreprise.serp = 'Création, refonte de site web en limousin';
 
-
     $scope.hebergeur.url = 'http://www.planethoster.net';
     $scope.hebergeur.adresse = 'Planethoster, 4416 Louis B Mayer Laval, Quebec, H7P 0G1 Canada';
-
 
   });

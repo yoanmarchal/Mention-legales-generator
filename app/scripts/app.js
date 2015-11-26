@@ -10,13 +10,10 @@
  */
 angular
   .module('mlgApp', [
-    'ngAria',
     'ngCookies',
     'ngMessages',
-    'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch',
     'hljs'
   ])
   .config(function ($routeProvider) {
