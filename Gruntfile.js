@@ -16,6 +16,7 @@ module.exports = function (grunt) {
   require('time-grunt')(grunt);
 
   grunt.loadNpmTasks('grunt-postcss');
+  grunt.loadNpmTasks('grunt-uncss');
 
   // Configurable paths for the application
   var appConfig = {
@@ -188,6 +189,17 @@ module.exports = function (grunt) {
       sass: {
         src: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
         ignorePath: /(\.\.\/){1,2}bower_components\//
+      }
+    },
+
+    uncss: {
+      dist: {
+        options: {
+          ignore: ['.ignore-this']
+        },
+        files: {
+          'dist/css/tidy.css': ['app/index.html', 'app/404.html']
+        }
       }
     },
 
