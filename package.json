@@ -1,7 +1,9 @@
 {
   "name": "mlg",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "highlight.js": ">7.0.0"
+  },
   "repository": {},
   "devDependencies": {
     "autoprefixer": "^6.0.3",

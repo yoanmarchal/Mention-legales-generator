@@ -14,7 +14,10 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/tomorrow.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/9.8.0/styles/tomorrow.min.css">
+
+    <script src="//cdn.jsdelivr.net/highlight.js/9.8.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 </head>
 
 <body ng-app="mlgApp">
@@ -39,11 +42,11 @@
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-highlightjs/build/angular-highlightjs.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- personal preference: github theme -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
-    <script src="//pc035860.github.io/angular-highlightjs/angular-highlightjs.min.js"></script>
+
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
