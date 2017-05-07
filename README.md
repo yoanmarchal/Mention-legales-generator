@@ -1,4 +1,5 @@
-# mlg
+# mention legal generator angularjs DEPRECIED
+New repository: https://github.com/yoanmarchal/generateur-mentions-legals.github.io
 
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
 version 0.11.1.
